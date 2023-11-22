@@ -114,10 +114,80 @@ section:nth-child(even){
     background: var(--grey);
 }
 
+/* WELCOME SECTION */
+.welcome {
+    width: 100%;
+    flex: 1;
+  
+    display: flex;
+    align-items: center;
+    background: var(--cream)
+}
+  
+.welcome .welcome-description {
+    flex: 1 1;
+    padding: auto;
+}
+  
+.welcome-h1 {
+    font-family: 'Marko One', serif;
+    font-size: 32px;
+    font-weight: 500;
+    color: var(--red);
+    padding-bottom: 20px;
+    text-transform: none;
+}
+
+.welcome-h2 {
+    font-family: 'Gupter', serif;
+    font-size: 25px;
+    color: var(--pink);
+}
+  
+.welcome .welcome-description p {
+    margin-block: 1rem;
+    font-size: 18px;
+    padding-right: 40px;
+    text-transform: none;
+}
+  
+.welcome .welcome-image {
+    flex: 1;
+    display: flex;
+}
+  
+.welcome .welcome-image img {
+    max-width: 450px;
+    width: 100%;
+    margin: auto;
+}
+
+.btn-aboutUs {
+    display: inline-block;
+    width: -moz-fit-content;
+    width: fit-content;
+    padding: 0.7rem 2rem;
+    border-radius: 1rem;
+    background: var(--red);
+    color: #ffffff;
+    cursor: pointer;
+    transition: all 400ms ease;
+}
+
+.btn-aboutUs:hover {
+    background: var(--pink);
+    box-shadow: 0 1rem 1.6rem rgba(12, 3, 27, 0.15);
+}
+  
+.hero {
+    display: flex;
+}
+  
+
 /* BEST SELLERS SECTION */
 .bestsellersection{
-    padding: .7rem;
-    background: var(--cream)
+    background: rgb(237, 219, 205);
+    padding-bottom: 40px;
 }
 
 .bestsellertext{
@@ -143,6 +213,7 @@ section:nth-child(even){
 
 .bestseller{
     text-align: center;
+    padding-bottom: 15px;
 }
 
 .bestsellerimages{
@@ -166,7 +237,27 @@ section:nth-child(even){
     font-size: 16px;
     font-weight: 400;
     text-align: center;
-    margin-bottom: 34px;
+}
+
+.klikOrderNow {
+    display: flex;
+    justify-content: center;
+}
+.btn-orderNow {
+    display: inline-block;
+    width: -moz-fit-content;
+    width: fit-content;
+    padding: 0.7rem 2rem;
+    border-radius: 1rem;
+    background: var(--red);
+    color: #ffffff;
+    cursor: pointer;
+    transition: all 400ms ease;
+}
+
+.btn-orderNow:hover {
+    background: var(--pink);
+    box-shadow: 0 1rem 1.6rem rgba(12, 3, 27, 0.15);
 }
 
 /* REVIEW SECTION */
@@ -179,7 +270,7 @@ section:nth-child(even){
 
 .reviewtext{
     text-align: center;
-    padding-top: 10px;
+    padding-top: 30px;
 }
 
 .reviewtext1{
@@ -496,10 +587,14 @@ footer .copyright {
   margin-top: 4rem;
   border-top: 1px solid rgb(255, 255, 255);
   font-size: 1rem;
+  background: linear-gradient(62deg, #eee3b6 0%, #e28f8e 100%);
 }
 
+footer .copyright p {
+    color: var(--red);
+    font-weight: bold;
+}
   
-
 
 
 

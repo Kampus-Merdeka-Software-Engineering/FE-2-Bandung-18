@@ -21,7 +21,7 @@
 }
 
 /* ABOUT US SECTION */
-.about_us{
+.about-us{
     padding: .7rem;
     background: var(--cream)
 }
@@ -31,19 +31,19 @@
     padding-top: 40px;
 }
 
-.aboutUs_images img{
+.aboutUs-images img{
     width: 30%; 
     height: auto;
     display: inline-block;
     margin-top: 60px;
 }
 
-.aboutUs_text{
+.aboutUs-text{
     text-align: center;
     padding-top: 10px;
 }
 
-.aboutUs_text1{
+.aboutUs-text1{
     font-family: 'Marko One', serif;
     font-size: 32px;
     font-weight: 500;
@@ -52,7 +52,7 @@
     padding-bottom: 18px;
 }
 
-.aboutUs_text2{
+.aboutUs-text2{
     font-family: 'Marko One', serif;
     font-size: 20px;
     font-weight: 500;
