@@ -40,10 +40,12 @@
 
     <div class="icons">
         <i class="fas fa-bars" id="menu-bars"></i>
-        <i class='bx bx-shopping-bag' id="cart-icon"></i>
+        <i class='bx bx-shopping-bag' id="cart-icon"></i>  
+        <!-- Tambahkan span notifikasi di atas ikon keranjang -->
+        <span class="cart-notification" id="cart-notification">0</span>
     </div>
 
-    <!-- CART-->
+    <!-- CART -->
     <div class="cart">
         <h2 class="cart-title">Your Cart</h2>
         <!-- CONTENT  -->
@@ -52,14 +54,13 @@
         <!-- TOTAL-->
         <div class="total">
             <div class="total-title">Total</div>
-            <div class="total-price">0 Rp</div>
+            <div class="total-price">Rp 0</div>
         </div>
         <!-- CHECK OUT BUTTON -->
         <button type="button" class="btn-buy">Check Out</button>
         <!-- CART CLOSE  -->
         <i class='bx bx-x' id="cart-close"></i>
     </div>
-</div>
 </header>
 
 <!-- FILTER MENU CATEGORY -->
@@ -168,6 +169,7 @@
 <!-- link js  -->
 <script src="../js/menu.js"></script>
 <script src="../js/script.js"></script>
+<script src="../js/icons_cart.js"></script>
 </body>
 
 </html>
