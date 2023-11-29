@@ -114,13 +114,18 @@ function handle_buyOrder() {
     alert("There is No Order to Place Yet! \nPlease Make an Order first.");
     return;
   }
+
   const cartContent = cart.querySelector(".cart-content");
   cartContent.innerHTML = "";
-  alert("Your Order is Placed Successfully :)");
+
+  // Menggunakan window.alert() untuk menampilkan pop-up
+  window.alert("Your Order is Placed Successfully :)");
+
   itemsAdded = [];
 
   update();
 }
+
 
 // =========== UPDATE & RERENDER FUNCTIONS =========
 function updateTotal() {

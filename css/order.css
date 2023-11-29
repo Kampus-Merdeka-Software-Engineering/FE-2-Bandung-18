@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Gupter:wght@400;700&family=Marko+One&display=swap');
+
+:root{
+ --grey:#e8e8e8;
+  --cream:#F7F5EB;
+  --red:#8B342A;
+  --pink:#DB2F61;
+  --yellow:#eee3b6;
+  --orange: rgb(255, 153, 0);
+  --box-shadow:0 .5rem 1.5rem rgba(0,0,0,.1);
+}   
+
+*{
+  font-family: 'Gupter', serif;
+  margin:0; padding:0; 
+  box-sizing: border-box;
+  text-decoration: none;
+  outline: none; border: none;
+  text-transform: capitalize;
+  transition: all .2s linear;
+}
+
+/* Styles for the new order page */
+.order-page {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.left-section,
+.right-section {
+    width: 48%;
+}
+
+.form-title {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.order-total {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 10px;
+}
+
+.btn-order-now {
+    margin-top: 20px;
+    padding: 12px 20px;
+    border: none;
+    background-color: var(--cream);
+    color: var(--red);
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.btn-order-now:hover {
+    background-color: var(--yellow);
+}

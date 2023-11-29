@@ -31,7 +31,7 @@
     <img class="logo" src="../image_home/Logo.png">
 
     <div class="navbar active">
-        <a href="../index.html#home">HOME</a>
+        <a href="../index.html">HOME</a>
         <a href="../index.html#Review">MENU DETAILS</a>
         <a href="menu.html">ORDER NOW</a>
         <a href="../index.html#contact-us">CONTACT US</a>
@@ -40,24 +40,76 @@
 
     <div class="icons">
         <i class="fas fa-bars" id="menu-bars"></i>
-        <i class='bx bx-shopping-bag' id="cart-icon"></i>
+    </div> 
+</header>
+
+<!-- MY ORDER PAGE -->
+<div class="order-page">
+    <h2 class="order-title">My Order</h2>
+
+    <!-- YOUR CART -->
+    <h2 class="cart-title">Your Cart</h2>
+
+    <!-- CONTENT -->
+    <div class="cart-content"></div>
+
+    <!-- TOTAL -->
+    <div class="total">
+        <div class="total-title">Total</div>
+        <div class="total-price">Rp 0</div>
     </div>
 
-    <!-- CART-->
-    <div class="cart">
-        <h2 class="cart-title">Your Cart</h2>
-        <!-- CONTENT  -->
-        <div class="cart-content">
-        </div>
-        <!-- TOTAL-->
-        <div class="total">
-            <div class="total-title">Total</div>
-            <div class="total-price">Rp 0</div>
-        </div>
-        <!-- CHECK OUT BUTTON -->
-        <button type="button" class="btn-buy">Check Out</button>
-        <!-- CART CLOSE  -->
-        <i class='bx bx-x' id="cart-close"></i>
+    <!-- CHECK OUT BUTTON -->
+    <button type="button" class="btn-buy">Check Out</button>
+
+    <!-- CART CLOSE -->
+    <i class='bx bx-x' id="cart-close"></i>
+
+    <!-- RIGHT SECTION - Order Form -->
+    <div class="right-section">
+        <h3 class="form-title">Order Details</h3>
+        <form id="order-form">
+            <label for="full-name">Full Name:</label>
+            <input type="text" id="full-name" name="full-name" required>
+
+            <label for="phone-number">Phone Number:</label>
+            <input type="tel" id="phone-number" name="phone-number" required>
+
+            <label for="address">Address:</label>
+            <textarea id="address" name="address" required></textarea>
+
+            <label for="payment-method">Payment Method:</label>
+            <select id="payment-method" name="payment-method" required>
+                <option value="cash">Cash</option>
+                <option value="dana">Dana</option>
+                <option value="gopay">Gopay</option>
+                <option value="ovo">OVO</option>
+                <option value="payleter">Payleter</option>
+            </select>
+
+            <label for="additional-message">Additional Message:</label>
+            <textarea id="additional-message" name="additional-message"></textarea>
+
+            <div class="order-total">
+                <div class="total-title">Total</div>
+                <div class="total-price">Rp 0</div>
+            </div>
+
+            <button type="button" class="btn-order-now" onclick="placeOrder()">Order Now</button>
+        </form>
     </div>
 </div>
-</header>   
+
+<!-- POPUP -->
+<div class="popup" id="popup">
+    <div class="popup-content">
+        <h2>Order Successful!</h2>
+        <p>Your order has been placed successfully. Below is your receipt:</p>
+        <div id="receipt"></div>
+        <button type="button" class="btn-close-popup" onclick="closePopup()">Close</button>
+    </div>
+</div>
+  
+</body>
+</html>
+
