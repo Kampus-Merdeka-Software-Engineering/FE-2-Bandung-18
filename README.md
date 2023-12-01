@@ -1,2 +1,5 @@
-# FE-2-Bandung-18
-FE-2-section-bandung-group-18 created by GitHub Classroom
+# BLISSWEET
+Blissweet Is A Dessert Platform With A Unique Aesthetic Specializing In Creating Delicious Treats To Enhance Your Mood.
+
+=============================================
+Copyright © Group 18 Sec-Bdg RevoU. Blissweet
