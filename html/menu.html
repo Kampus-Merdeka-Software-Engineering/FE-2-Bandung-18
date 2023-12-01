@@ -31,51 +31,82 @@
     <img class="logo" src="../image_home/Logo.png">
 
     <div class="navbar active">
-        <a href="../index.html#home">HOME</a>
+        <a href="../index.html">HOME</a>
         <a href="../index.html#Review">MENU DETAILS</a>
-        <a href="menu.html">ORDER NOW</a>
+        <a href="menu.html">ORDER</a>
         <a href="../index.html#contact-us">CONTACT US</a>
         <a href="about_us.html">ABOUT US</a>
     </div>
 
     <div class="icons">
         <i class="fas fa-bars" id="menu-bars"></i>
-        <i class='bx bx-shopping-bag' id="cart-icon"></i>
+        <i class='bx bx-shopping-bag' id="cart-icon"></i>  
+        <!-- Tambahkan span notifikasi di atas ikon keranjang -->
+    <span class="cart-notification" id="cart-notification">0</span>
+    </div>
+ 
+<!-- CART -->
+<div class="cart">
+    <!-- FORM -->
+    <div class="order-form">
+        <h2 class="form-title">Order Details</h2>
+        <form id="order-form">
+            <label for="full-name">Full Name:</label>
+            <input type="text" id="full-name" name="full-name" required> 
+
+            <label for="phone-number">Phone Number:</label>
+            <input type="tel" id="phone-number" name="phone-number" required> 
+
+            <label for="address">Address:</label>
+            <textarea id="address" name="address" required></textarea>
+
+            <label for="payment-method">Payment Methods:</label>
+            <select id="payment-method" name="payment-method" required>
+                <option value="cash">Cash</option>
+                <option value="dana">Dana</option>
+                <option value="gopay">Gopay</option>
+                <option value="ovo">OVO</option>
+                <option value="payleter">PayLater</option>
+            </select>
+
+            <label for="additional-message">Additional Message:</label>
+            <textarea id="additional-message" name="additional-message"></textarea>
+        </form>
     </div>
 
-    <!-- CART -->
-    <div class="cart">
-        <h2 class="cart-title">Your Cart</h2>
-        <!-- CONTENT  -->
-        <div class="cart-content">
-        </div>
-        <!-- TOTAL-->
-        <div class="total">
-            <div class="total-title">Total</div>
-            <div class="total-price">Rp 0</div>
-        </div>
-        <!-- CHECK OUT BUTTON -->
-        <button type="button" class="btn-buy">Check Out</button>
-        <!-- CART CLOSE  -->
-        <i class='bx bx-x' id="cart-close"></i>
+    <!-- YOUR CART -->
+    <h2 class="cart-title">Your Cart</h2>
+
+    <!-- CONTENT -->
+    <div class="cart-content"></div>
+
+    <!-- TOTAL -->
+    <div class="total">
+        <div class="total-title">Total</div>
+        <div class="total-price">Rp 0</div>
     </div>
+
+    <!-- CHECK OUT BUTTON -->
+    <button type="button" class="btn-buy" onclick="showPopup()">Order Now</button>
 
     <!-- POPUP -->
     <div class="popup" id="popup">
         <div class="popup-content">
-            <h2>Order Successful!</h2>
-            <p>Your order has been placed successfully. Below is your receipt:</p>
-            <div id="receipt"></div>
-        <button type="button" class="btn-close-popup" onclick="closePopup()">Close</button>
+            <span class="close" onclick="closePopup()">&times;</span>
+            <h2>Order Successfully Placed! <i class='bx bx-check'></i></h2>
         </div>
+    </div>
+
+    <!-- CART CLOSE -->
+    <i class='bx bx-x' id="cart-close"></i>
     </div>
 </header>
 
-<!-- FILTER MENU CATEGORY -->
+<!-- FILTER MENU CATEGORY1 -->
 <div class="menu-categorysection" id="menu-category">
     <div class="menu-categoryimages">
         <div class="menu-category">
-            <a href="../html/dessert_box.html" class="image-link">
+            <a href="../html/menu.html#dessert-box" class="image-link">
                 <img src="../image_menu/Category1.png" alt="menu-category1">
                 <div class="productname">
                     Dessert Box
@@ -84,16 +115,16 @@
         </div> 
 
         <div class="menu-category">
-            <a href="../html/cupcakes.html" class="image-link">
+            <a href="../html/menu.html#cupcakes" class="image-link">
                 <img src="../image_menu/Category2.png" alt="menu-category2">
                 <div class="productname">
                     Cupcakes
                 </div>
             </a>
-    </div>
+       </div>
         
         <div class="menu-category">
-            <a href="../html/smoothies.html" class="image-link">
+            <a href="../html/menu.html#smoothies" class="image-link">
                 <img src="../image_menu/Category3.png" alt="menu-category3">
                 <div class="productname">
                     Smoothies
@@ -102,7 +133,7 @@
         </div>
 
         <div class="menu-category">
-            <a href="../html/pies.html" class="image-link">
+            <a href="../html/menu.html#pies" class="image-link">
                 <img src="../image_menu/Category3.png" alt="menu-category4">
                 <div class="productname">
                     Pies
@@ -111,7 +142,7 @@
         </div>
 
         <div class="menu-category">
-            <a href="../html/brownies.html" class="image-link">
+            <a href="../html/menu.html#brownies" class="image-link">
                 <img src="../image_menu/Category5.png" alt="menu-category5">
                 <div class="productname">
                     Brownies
@@ -121,18 +152,315 @@
     </div>
 </div>
 
-
-<!-- ORDER NOW-->
-<div class="welcomeMenu-section">
-    <div class="isi-welcomeMenu">
-      <h2>ORDER NOW!</h2>
-      <p>Explore all of our delightful desserts by clicking on the dessert categories above, and order your favorite dessert from the menu now. Indulge in a delightful journey of flavors and treat yourself to the Blissweet experience.</p>
+<!-- ORDER SECTION-->
+<div class="welcomeMenu">
+    <div class="welcomeMenu-description">
+      <h1 class="welcomeMenu-title">ORDER NOW!</h1>
+      <hr class="welcomeMenu-isi" />
+      <p>
+        Explore all of our delicious desserts and order your favorite dessert now. 
+        Indulge in a delightful taste journey and pamper yourself with the Blissweet experience.
+      </p>
     </div>
-
-    <div class="image-welcomeMenu">
-      <img src="../image_menu/Welcome our menu.png" alt="Image">
+    <div class="welcomeMenu-image">
+        <img src="../image_menu/Welcome our menu.png" alt="welcomeMenu Img" />
     </div>
 </div>
+
+<!-- DESSERT BOX SECTION -->
+<section class="ourMenu-container" id="dessert-box">
+    <h1 class="section-title">DESSERT BOX</h1>
+    <p class="section-title1">Discover our dessert boxes at Blissweet! We offer a variety of flavors to satisfy your cravings. Choose your favorite and enjoy the enjoyable experience.</p>
+
+    <!-- CONTENT  -->
+    <div class="ourMenu-content">
+        <!-- PRODUCT 1 -->
+        <div class="product-box">
+            <img src="../image_menu/Green Grape E.png" alt="" class="product-img">
+            <h2 class="product-title">Green Grape Euphoria</h2>
+            <span class="product-price">Rp 60.000</span>
+            <i class='bx bx-shopping-bag add-cart'></i>
+        </div>
+        <!-- PRODUCT 2 -->
+        <div class="product-box">
+            <img src="../image_menu/Sweetberry.png" alt="" class="product-img">
+            <h2 class="product-title">Sweetberry</h2>
+            <span class="product-price">Rp 60.000</span>
+            <i class='bx bx-shopping-bag add-cart'></i>
+        </div>
+        <!-- PRODUCT 3 -->
+        <div class="product-box">
+            <img src="../image_menu/Sunny Mango.png" alt="" class="product-img">
+            <h2 class="product-title">Sunny Mango</h2>
+            <span class="product-price">Rp 60.000</span>
+            <i class='bx bx-shopping-bag add-cart'></i>
+        </div>
+        <!-- PRODUCT 4 -->
+        <div class="product-box">
+            <img src="../image_menu/Oreo Bliss.png" alt="" class="product-img">
+            <h2 class="product-title">Oreo Bliss</h2>
+            <span class="product-price">Rp 55.000</span>
+            <i class='bx bx-shopping-bag add-cart'></i>
+        </div>
+        <!-- PRODUCT 5 -->
+        <div class="product-box">
+            <img src="../image_menu/Choco delight.png" alt="" class="product-img">
+            <h2 class="product-title">Choco Delight</h2>
+            <span class="product-price">Rp 55.000</span>
+            <i class='bx bx-shopping-bag add-cart'></i>
+        </div>
+        <!-- PRODUCT 6 -->
+        <div class="product-box">
+            <img src="../image_menu/Tiramisu Temptation.png" alt="" class="product-img">
+            <h2 class="product-title">Tiramisu Temptation</h2>
+            <span class="product-price">Rp 58.000</span>
+            <i class='bx bx-shopping-bag add-cart'></i>
+        </div>
+    </div>
+</section>
+
+<!-- DCUPCAKES SECTION -->
+<section class="ourMenu-container" id="cupcakes">
+    <h1 class="section-title">CUPCAKES</h1>
+    <p class="section-title1">Discover our cupcakes at Blissweet! We offer a variety of flavors to satisfy your cravings. Choose your favorite and enjoy the enjoyable experience.</p>
+
+    <!-- CONTENT  -->
+    <div class="ourMenu-content">
+        <!-- PRODUCT 1 -->
+        <div class="product-box">
+            <img src="../image_menu/Love Potion.png" alt="" class="product-img">
+            <h2 class="product-title">Love Potion</h2>
+            <span class="product-price">Rp 45.000</span>
+            <i class='bx bx-shopping-bag add-cart'></i>
+        </div>
+        <!-- PRODUCT 2 -->
+        <div class="product-box">
+            <img src="../image_menu/Neapolitan Ice Cream.png" alt="" class="product-img">
+            <h2 class="product-title">Neapolitan Ice Cream</h2>
+            <span class="product-price">Rp 45.000</span>
+            <i class='bx bx-shopping-bag add-cart'></i>
+        </div>
+        <!-- PRODUCT 3 -->
+        <div class="product-box">
+            <img src="../image_menu/Love Shake.png" alt="" class="product-img">
+            <h2 class="product-title">Love Shake</h2>
+            <span class="product-price">Rp 45.000</span>
+            <i class='bx bx-shopping-bag add-cart'></i>
+        </div>
+        <!-- PRODUCT 4 -->
+        <div class="product-box">
+            <img src="../image_menu/Elvis.png" alt="" class="product-img">
+            <h2 class="product-title">ELvis Crown</h2>
+            <span class="product-price">Rp 50.000</span>
+            <i class='bx bx-shopping-bag add-cart'></i>
+        </div>
+        <!-- PRODUCT 5 -->
+        <div class="product-box">
+            <img src="../image_menu/Midnight Galaxy.png" alt="" class="product-img">
+            <h2 class="product-title">Midnight Galaxy</h2>
+            <span class="product-price">Rp 60.000</span>
+            <i class='bx bx-shopping-bag add-cart'></i>
+        </div>
+        <!-- PRODUCT 6 -->
+        <div class="product-box">
+            <img src="../image_menu/Choc Mint.png" alt="" class="product-img">
+            <h2 class="product-title">Mint Freakshake</h2>
+            <span class="product-price">Rp 58.000</span>
+            <i class='bx bx-shopping-bag add-cart'></i>
+        </div>
+        <!-- PRODUCT 7 -->
+        <div class="product-box">
+            <img src="../image_menu/Sundae Funday.png" alt="" class="product-img">
+            <h2 class="product-title">Sunday Funday</h2>
+            <span class="product-price">Rp 50.000</span>
+            <i class='bx bx-shopping-bag add-cart'></i>
+        </div>
+        <!-- PRODUCT 8 -->
+        <div class="product-box">
+            <img src="../image_menu/Butterbeer.png" alt="" class="product-img">
+            <h2 class="product-title">Butterbeer</h2>
+            <span class="product-price">Rp 45.000</span>
+            <i class='bx bx-shopping-bag add-cart'></i>
+        </div>
+        <!-- PRODUCT 9 -->
+        <div class="product-box">
+            <img src="../image_menu/Chromatica.png" alt="" class="product-img">
+            <h2 class="product-title">Chromatica</h2>
+            <span class="product-price">Rp 60.000</span>
+            <i class='bx bx-shopping-bag add-cart'></i>
+        </div>
+    </div>
+</section>
+
+<!-- SMOOTHIES SECTION -->
+<section class="ourMenu-container" id="smoothies">
+    <h1 class="section-title">SMOOTHIES</h1>
+    <p class="section-title1">Discover our Smoothies at Blissweet! We offer a variety of flavors to satisfy your cravings. Choose your favorite and enjoy the enjoyable experience.</p>
+
+    <!-- CONTENT  -->
+    <div class="ourMenu-content">
+        <!-- PRODUCT 1 -->
+        <div class="product-box">
+            <img src="../image_menu/Kiwirazz Splash.png" alt="" class="product-img">
+            <h2 class="product-title">Kiwirazz Splash</h2>
+            <span class="product-price">Rp 60.000</span>
+            <i class='bx bx-shopping-bag add-cart'></i>
+        </div>
+        <!-- PRODUCT 2 -->
+        <div class="product-box">
+            <img src="../image_menu/Berry Blast.png" alt="" class="product-img">
+            <h2 class="product-title">Berry Blast</h2>
+            <span class="product-price">Rp 65.000</span>
+            <i class='bx bx-shopping-bag add-cart'></i>
+        </div>
+        <!-- PRODUCT 3 -->
+        <div class="product-box">
+            <img src="../image_menu/Tropical Delight.png" alt="" class="product-img">
+            <h2 class="product-title">Tropical Delight</h2>
+            <span class="product-price">Rp 65.000</span>
+            <i class='bx bx-shopping-bag add-cart'></i>
+        </div>
+        <!-- PRODUCT 4 -->
+        <div class="product-box">
+            <img src="../image_menu/Raspberry.png" alt="" class="product-img">
+            <h2 class="product-title">Raspberry</h2>
+            <span class="product-price">Rp 60.000</span>
+            <i class='bx bx-shopping-bag add-cart'></i>
+        </div>
+        <!-- PRODUCT 5 -->
+        <div class="product-box">
+            <img src="../image_menu/These Layered.png" alt="" class="product-img">
+            <h2 class="product-title">These Layered</h2>
+            <span class="product-price">Rp 60.000</span>
+            <i class='bx bx-shopping-bag add-cart'></i>
+        </div>
+        <!-- PRODUCT 6 -->
+        <div class="product-box">
+            <img src="../image_menu/ChocoBerry.png" alt="" class="product-img">
+            <h2 class="product-title">Choco Berry</h2>
+            <span class="product-price">Rp 65.000</span>
+            <i class='bx bx-shopping-bag add-cart'></i>
+        </div>
+        <!-- PRODUCT 7 -->
+        <div class="product-box">
+            <img src="../image_menu/Berrynana.png" alt="" class="product-img">
+            <h2 class="product-title">Berrynana</h2>
+            <span class="product-price">Rp 60.000</span>
+            <i class='bx bx-shopping-bag add-cart'></i>
+        </div>
+        <!-- PRODUCT 8 -->
+        <div class="product-box">
+            <img src="../image_menu/Blueberry Bliss.png" alt="" class="product-img">
+            <h2 class="product-title">Blueberry Bliss</h2>
+            <span class="product-price">Rp 60.000</span>
+            <i class='bx bx-shopping-bag add-cart'></i>
+        </div>
+    </div>
+</section>
+
+<!-- PIES SECTION -->
+<section class="ourMenu-container" id="pies">
+    <h1 class="section-title">PIES</h1>
+    <p class="section-title1">Discover our Pies at Blissweet! We offer a variety of flavors to satisfy your cravings. Choose your favorite and enjoy the enjoyable experience.</p>
+
+    <!-- CONTENT  -->
+    <div class="ourMenu-content">
+        <!-- PRODUCT 1 -->
+        <div class="product-box">
+            <img src="../image_menu/Lemon Meringue.png" alt="" class="product-img">
+            <h2 class="product-title">Lemon Meringue</h2>
+            <span class="product-price">Rp 40.000</span>
+            <i class='bx bx-shopping-bag add-cart'></i>
+        </div>
+        <!-- PRODUCT 2 -->
+        <div class="product-box">
+            <img src="../image_menu/Coconut Cheesecake.png" alt="" class="product-img">
+            <h2 class="product-title">Coconut Cheesecake</h2>
+            <span class="product-price">Rp 45.000</span>
+            <i class='bx bx-shopping-bag add-cart'></i>
+        </div>
+        <!-- PRODUCT 3 -->
+        <div class="product-box">
+            <img src="../image_menu/Peanut Butter F.png" alt="" class="product-img">
+            <h2 class="product-title">Peanut Butter</h2>
+            <span class="product-price">Rp 45.000</span>
+            <i class='bx bx-shopping-bag add-cart'></i>
+        </div>
+        <!-- PRODUCT 4 -->
+        <div class="product-box">
+            <img src="../image_menu/Pumpkin.png" alt="" class="product-img">
+            <h2 class="product-title">Pumpkin</h2>
+            <span class="product-price">Rp 40.000</span>
+            <i class='bx bx-shopping-bag add-cart'></i>
+        </div>
+        <!-- PRODUCT 5 -->
+        <div class="product-box">
+            <img src="../image_menu/W.C Macadamia.png" alt="" class="product-img">
+            <h2 class="product-title">White Chocolate Macadamia</h2>
+            <span class="product-price">Rp 45.000</span>
+            <i class='bx bx-shopping-bag add-cart'></i>
+        </div>
+        <!-- PRODUCT 6 -->
+        <div class="product-box">
+            <img src="../image_menu/Chocolate Cream.png" alt="" class="product-img">
+            <h2 class="product-title">Chocolate Cream</h2>
+            <span class="product-price">Rp 45.000</span>
+            <i class='bx bx-shopping-bag add-cart'></i>
+        </div>
+    </div>
+</section>
+
+<!-- BROWNIES SECTION -->
+<section class="ourMenu-container" id="brownies">
+    <h1 class="section-title">BROWNIES</h1>
+    <p class="section-title1">Discover our brownies at Blissweet! We offer a variety of flavors to satisfy your cravings. Choose your favorite and enjoy the enjoyable experience.</p>
+
+    <!-- CONTENT  -->
+    <div class="ourMenu-content">
+        <!-- PRODUCT 1 -->
+        <div class="product-box">
+            <img src="../image_menu/Turtle Cheesecake C.png" alt="" class="product-img">
+            <h2 class="product-title">Turtle Cheesecake</h2>
+            <span class="product-price">Rp 60.000</span>
+            <i class='bx bx-shopping-bag add-cart'></i>
+        </div>
+        <!-- PRODUCT 2 -->
+        <div class="product-box">
+            <img src="../image_menu/Coconut.png" alt="" class="product-img">
+            <h2 class="product-title">Coconut Sweet</h2>
+            <span class="product-price">Rp 65.000</span>
+            <i class='bx bx-shopping-bag add-cart'></i>
+        </div>
+        <!-- PRODUCT 3 -->
+        <div class="product-box">
+            <img src="../image_menu/Lemon.png" alt="" class="product-img">
+            <h2 class="product-title">Lemon Bars</h2>
+            <span class="product-price">Rp 65.000</span>
+            <i class='bx bx-shopping-bag add-cart'></i>
+        </div>
+        <!-- PRODUCT 4 -->
+        <div class="product-box">
+            <img src="../image_menu/Caramel Snickerdoodle.png" alt="" class="product-img">
+            <h2 class="product-title">Caramel Snickerdoodle</h2>
+            <span class="product-price">Rp 60.000</span>
+            <i class='bx bx-shopping-bag add-cart'></i>
+        </div>
+        <!-- PRODUCT 5 -->
+        <div class="product-box">
+            <img src="../image_menu/Caramel.png" alt="" class="product-img">
+            <h2 class="product-title">Choco Caramel</h2>
+            <span class="product-price">Rp 65.000</span>
+            <i class='bx bx-shopping-bag add-cart'></i>
+        </div>
+        <!-- PRODUCT 6 -->
+        <div class="product-box">
+            <img src="../image_menu/Fudgy Biscoff S.png" alt="" class="product-img">
+            <h2 class="product-title">Fudgy Biscoff Swirl</h2>
+            <span class="product-price">Rp 65.000</span>
+            <i class='bx bx-shopping-bag add-cart'></i>
+        </div>
+    </div>
+</section>
 
 <!--FOOTER SECTION-->
 <footer>
@@ -179,72 +507,12 @@
 <!-- link js  -->
 <script src="../js/menu.js"></script>
 <script src="../js/script.js"></script>
-
-</body>
-
-</html>
+<script src="../js/icons_cart.js"></script>
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- File landing page js -->
-<script src="../js/script.js"></script>
-
-<!-- Swiper js -->
-<script src="https://cdn.jsdelivr.net/npm/swiper@11.0.3/swiper-bundle.min.js"></script>
-
-<!-- Auto slider js -->
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
-<!-- File customer feedback js -->
-<script src="../js/feedback.js"></script>
-
-<!-- File swiper review js -->
-<script src="../js/Review.js"></script>
-
-<!-- File auto slider home js -->
-<script src="../js/Home.js"></script>
 
 </body>
 </html>

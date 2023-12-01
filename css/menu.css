@@ -243,60 +243,64 @@
 }
 
 
-
-
-
-
-
-
-
-
-
-
 /* WELCOME OUR MENU */
-.welcomeMenu-section {
-  display: flex;
+.welcomeMenu {
+  width: 100%;
   flex: 1;
-  justify-content: space-between;
+
+  display: flex;
   align-items: center;
-  padding: 50px 0;
-  background: linear-gradient(62deg, #eee3b6 0%, #e28f8e 100%);;
+  background-color: #fdfaf2;
+  background: linear-gradient(62deg, #eee3b6 0%, #e28f8e 100%);
 }
 
-.isi-welcomeMenu {
-  text-align: center ;
+.welcomeMenu .welcomeMenu-description {
+  flex: 1.5 3;
+  padding: auto;
 }
 
-.isi-welcomeMenu h2 {
-  font-family: 'Gupter', serif;
-  font-size: 26px;
-  font-weight: 600;
+.welcomeMenu-title {
+  font-family: 'Marko One', serif;
+  font-weight: 550;
   color: var(--pink);
-  padding-bottom: 20px;
+  padding-bottom: 5px;
   text-align: center;
   padding-top: 30px;
+  font-size: 30px;
 }
 
-.isi-welcomeMenu p {
+.welcomeMenu .welcomeMenu-description p {
+  margin-block: 1rem;
+  line-height: 2rem;
   font-family: 'Gupter', serif;
-  font-size: 20px;
   font-weight: 500;
   color: #000000;
   text-align: justify;
-  margin: 0 190px;
   text-transform: none;
+  font-size: 20px;
 }
 
-.image-welcomeMenu {
+.welcomeMenu-isi {
+  max-width: 600px;
+  width: 100%;
+  height: 5px;
   margin-left: 10px;
 }
 
-.image-welcomeMenu img {
-  max-width: 50%;
-  height: auto;
-  align-items: center;
+.welcomeMenu .welcomeMenu-image {
+  flex: 1;
+  display: flex;
 }
 
+.welcomeMenu .welcomeMenu-image img {
+  max-width: 280px;
+  width: 100%;
+  margin: auto;
+}
+
+.hero {
+  display: flex;
+}
 
 /* OUR MENU SECTION */
 .ourMenu-container {
@@ -311,10 +315,11 @@
   font-family: 'Marko One', serif;
   font-size: 28px;
   font-weight: 500;
-  color: var(--pink);
+  color: var(--red);
   text-align: center;
-  padding-top: 70px;
-  padding-bottom: 10px;
+  padding-top: 60px;
+  padding-bottom: 20px;
+  text-decoration: underline;
 }
 
 .section-title1{
@@ -328,8 +333,8 @@
 .ourMenu-content{
   display: grid;
   grid-template-columns: repeat(3, minmax(200px, auto));
-  gap: 8rem;
-  padding: 7rem;
+  gap: 5rem;
+  padding: 5rem 7rem;
 }
 
 .product-box{
@@ -337,7 +342,7 @@
   background: linear-gradient(62deg, #eee3b6 0%, #e28f8e 100%);
   border-radius: 20px;
   box-shadow: 0px 5px 15px rgba(0, 0, 0, 1);
-  padding-bottom: 50px;
+  padding-bottom: 40px;
 }
 
 .product-box:hover{
@@ -391,81 +396,255 @@
 
 
 
-/* ================ RESPONSIVE & BREAKPOINTS ============= */
-@media (max-width: 1080px){
-  .nav{
-      padding: 15px;
+
+
+
+/* ================ TAMPILAN RESPONSIVE ============= */
+@media only screen and (max-width: 1366px) {
+  .welcomeMenu-isi {
+  max-width: 400px;
+  width: 100%;
+  border-radius: 15px;
   }
-  .container{
-      width: 90%;
-      margin: 0 auto;
+
+  .welcomeMenu-title {
+    font-size: 28px;
+    color: var(--pink);
+    padding-left: 80px;
   }
-  section{
-      padding: 3rem 0 2rem;
+  
+  .welcomeMenu .welcomeMenu-description p {
+    font-size: 16px;
+    padding-left: 80px;
+    padding-bottom: 10px;
+    line-height: 2rem;
   }
-  .shop{
-      margin-top: 2rem;
+
+}
+
+@media only screen and (max-width: 768px) {
+  .welcomeMenu-isi {
+    max-width: 335px;
+    width: 100%;
+    border-radius: 15px;
+  }
+  .menu-categorysection {
+    padding-top: 40px;
+  }
+
+  .menu-categoryimages {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 25px; 
+  }
+
+  .menu-categoryimages img {
+    width: 30px; 
+    height: 42px;
+  }
+
+  .productname {
+    font-size: 10px; 
+  }
+
+  .product-title{
+    font-size: 16px;
+  }
+
+  .welcomeMenu-title{
+    font-size: 24px;
+    color: var(--pink);
+    padding-left: 30px;
+  }
+  
+  .welcomeMenu .welcomeMenu-description p {
+    font-size: 14px;
+    padding-left: 30px;
+    padding-bottom: 10px;
+    line-height: 2rem;
+  }
+
+  .ourMenu-content {
+    grid-template-columns: repeat(2, minmax(200px, auto));
+    gap: 6rem;
+    padding: 8rem;
+  }
+
+  .section-title1{
+    padding: 0 20px;
   }
 }
 
 
+@media only screen and (max-width: 600px) {
+  .menu-categorysection {
+    padding-top: 40px;
+  }
+  
+  .menu-categoryimages {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 20px; 
+  }
 
-/* For Medium Devices */
-@media (max-width: 400px){
-  .nav{
-      padding: 11px;
+  .productname {
+    font-size: 10px; 
   }
-  .logo{
-      font-size: 1rem;
+
+  .welcomeMenu-title {
+    font-size: 22px;
+    color: var(--pink);
+    padding-left: 30px;
   }
+
+  .welcomeMenu .welcomeMenu-description p {
+    font-size: 14px;
+    padding-left: 30px;
+    padding-bottom: 10px;
+    line-height: 2rem;
+  }
+
+  .ourMenu-content {
+    grid-template-columns: repeat(2, minmax(150px, auto));
+    gap: 4rem;
+    padding: 6rem;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .welcomeMenu-title {
+    font-size: 20px;
+    color: var(--pink);
+    padding-left: 30px;
+    
+  }
+
+  .welcomeMenu-isi {
+    max-width: 400px;
+    width: 50%;
+    height: 10px;
+    padding-left: 10px;
+    border-radius: 10px;
+  }
+
+  .welcomeMenu-description {
+    margin-block: 15px;
+    padding: auto;
+  }
+
+  .welcomeMenu-title {
+    font-size: 20px;
+    color: var(--pink);
+    padding-left: 30px;
+  }
+
+  .welcomeMenu .welcomeMenu-description p {
+    font-size: 14px;
+    padding-left: 30px;
+    padding-bottom: 10px;
+    line-height: 2rem;
+  }
+
+  .ourMenu-content {
+    grid-template-columns: repeat(2, minmax(150px, auto));
+    gap: 3rem;
+    padding: 4rem;
+  }
+
+  .product-box:hover {
+    padding: 5px;
+  }
+
+  .add-cart,
+  .product-price {
+    font-size: 20px;
+    padding: 8px;
+  }
+
+}
+
+@media only screen and (max-width: 400px){
   .cart{
       width: 320px;
   }
+  .welcomeMenu-title {
+    font-size: 20px;
+    color: var(--pink);
+    padding-left: 30px;
+  }
+  .welcomeMenu .welcomeMenu-description p {
+    font-size: 14px;
+    padding-left: 30px;
+    padding-bottom: 10px;
+    line-height: 2rem;
+  }
+
+  .ourMenu-content {
+    grid-template-columns: repeat(2, minmax(150px, auto));
+    gap: 3rem;
+    padding: 4rem;
+  }
 }
 
-/* For Small Devices */
-@media (max-width: 360px){
-  .shop{
-      margin-top: 1rem;
-  }
+@media only screen and  (max-width: 360px){
   .cart{
       width: 280px;
   }
+
+  .welcomeMenu-title {
+    font-size: 16px;
+    color: var(--pink);
+    padding-left: 10px;
+  }
+
+  .welcomeMenu-isi {
+    max-width: 400px;
+    width: 50%;
+    height: 10px;
+    padding-left: 10px;
+    border-radius: 10px;
+  }
+
+  .welcomeMenu-description {
+    margin-block: 15px;
+    padding: auto;
+  }
+
+  .welcomeMenu .welcomeMenu-description p {
+    font-size: 14px;
+    padding-left: 10px;
+    padding-bottom: 10px;
+    line-height: 2rem;
+  }
+
+  .menu-categorysection {
+    padding-top: 40px;
+  }
+
+  .menu-categoryimages {
+    margin: 10px; 
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  .menu-cateegoryimages img {
+    width: 10px; 
+    height: 18px;
+  }
+
+  .productname {
+    font-size: 2px; 
+  }
+
+  .ourMenu-content {
+    grid-template-columns: repeat(2, minmax(150px, auto));
+    gap: 3rem;
+    padding: 4rem;
+  }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 @media only screen and (max-width: 150px) {
   .menu-categorysection {
@@ -489,68 +668,10 @@
   }
 }
 
-/* Media Query untuk perangkat dengan lebar maksimum 360px */
-@media only screen and (max-width: 360px) {
-  .menu-categorysection {
-    padding-top: 40px;
-  }
 
-  .menu-categoryimages {
-    margin: 10px; 
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-  }
 
-  .menu-cateegoryimages img {
-    width: 10px; 
-    height: 18px;
-  }
 
-  .productname {
-    font-size: 2px; 
-  }
-}
 
-@media only screen and (max-width: 600px) {
-  .menu-categorysection {
-    padding-top: 40px;
-  }
-  
-  .menu-categoryimages {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    margin: 20px; 
-  }
-
-  .productname {
-    font-size: 10px; 
-  }
-}
-
-/* Media Query untuk perangkat dengan lebar maksimum 768px */
-@media only screen and (max-width: 768px) {
-  .menu-categorysection {
-    padding-top: 40px;
-  }
-
-  .menu-categoryimages {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    margin: 25px; 
-  }
-
-  .menu-categoryimages img {
-    width: 30px; 
-    height: 42px;
-  }
-
-  .productname {
-    font-size: 10px; 
-  }
-}
 
 
 
