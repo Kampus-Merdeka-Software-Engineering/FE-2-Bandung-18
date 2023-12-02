@@ -114,15 +114,12 @@ function handle_changeItemQuantity() {
 
 function handle_buyOrder() {
   if (itemsAdded.length <= 0) {
-    alert("There is No Order to Place Yet! \nPlease Make an Order first.");
+    alert("There is No Order to Place Yet!");
     return;
   }
 
   const cartContent = cart.querySelector(".cart-content");
   cartContent.innerHTML = "";
-
-  // Menggunakan window.alert() untuk menampilkan pop-up
-  window.alert("Your Order is Placed Successfully :)");
 
   itemsAdded = [];
   saveCartToLocalStorage(); // Save cart items to Local Storage
@@ -190,4 +187,132 @@ function loadCartFromLocalStorage() {
 
 
 
+// =============== HANDLE ORDER MODAL FUNCTIONS ===============
+function showOrderModal() {
+  // Cek apakah keranjang tidak kosong sebelum menampilkan formulir pesanan
+  if (itemsAdded.length > 0) {
+    const orderModal = document.getElementById("order-modal");
+    orderModal.style.display = "block";
+
+    // Simpan status formulir pesanan ke localStorage
+    localStorage.setItem("orderFormVisible", "true");
+  } else {
+    // Jika keranjang kosong, berikan pesan atau lakukan tindakan yang sesuai
+    alert("\nPlease Make an Order first.");
+  }
+}
+
+function closeOrderModal() {
+  const orderModal = document.getElementById("order-modal");
+  orderModal.style.display = "none";
+
+  // Hapus status formulir pesanan dari localStorage
+  localStorage.removeItem("orderFormVisible");
+}
+
+// Jalankan fungsi showOrderModal saat halaman dimuat jika status formulir pesanan ada di localStorage
+document.addEventListener("DOMContentLoaded", function () {
+  const orderFormVisible = localStorage.getItem("orderFormVisible");
+
+  if (orderFormVisible === "true") {
+    showOrderModal();
+  }
+});
+
+
+function submitOrder() {
+  // Collect form data
+  const fullname = document.getElementById("fullname").value;
+  const phone = document.getElementById("phone").value;
+  const address = document.getElementById("address").value;
+  const paymentMethod = document.getElementById("payment-method").value;
+  const additionalMessage = document.getElementById("additional-message").value;
+
+  // Perform form validation
+  if (!fullname || !phone || !address || !paymentMethod) {
+    window.alert("Please fill out all the required fields before submitting.");
+    return;
+  }
+
+  // Additional validation or processing logic can be added here
+
+  // Save order details to local storage
+  saveOrderToLocalStorage({
+    fullname,
+    phone,
+    address,
+    paymentMethod,
+    additionalMessage,
+    items: itemsAdded
+  });
+
+  // Display confirmation message
+  showSuccessPopup();
+}
+
+function saveOrderToLocalStorage(orderDetails) {
+  // Save order details to local storage
+  localStorage.setItem("orderDetails", JSON.stringify(orderDetails));
+}
+
+function loadOrderFromLocalStorage() {
+  // Load order details from local storage
+  const orderDetailsString = localStorage.getItem("orderDetails");
+  if (orderDetailsString) {
+    const orderDetails = JSON.parse(orderDetailsString);
+    // Do something with the order details if needed
+    // For example, display them in the UI
+  }
+}
+
+function clearOrderFromLocalStorage() {
+  // Clear order details from local storage after submission
+  localStorage.removeItem("orderDetails");
+}
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
+  // Load order details from local storage when the page is loaded
+  loadOrderFromLocalStorage();
+  // ...
+
+  // Check if the order form has been submitted
+  const orderDetailsString = localStorage.getItem("orderDetails");
+  if (orderDetailsString) {
+    // If order details exist, hide the order form
+    closeOrderModal();
+  }
+});
+
+
+
+
+// Update your existing buy button event listener
+const buy_btn = document.querySelector(".btn-buy");
+buy_btn.addEventListener("click", showOrderModal);
+
+
+
+// function pop-up
+function showSuccessPopup() {
+  const successPopup = document.getElementById("success-popup");
+  const orderForm = document.getElementById("order-modal");
+
+  // Menyembunyikan formulir
+  orderForm.style.display = "none";
+
+  // Menampilkan pop-up sukses
+  successPopup.style.display = "block";
+  document.getElementById("popup-overlay").style.display = "flex";
+}
+
+function closeSuccessPopup() {
+  const successPopup = document.getElementById("success-popup");
+  const orderForm = document.getElementById("order-modal");
+
+  // Menyembunyikan pop-up sukses
+  successPopup.style.display = "none";
+  document.getElementById("popup-overlay").style.display = "none";
+}
 

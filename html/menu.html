@@ -40,13 +40,11 @@
 
     <div class="icons">
         <i class="fas fa-bars" id="menu-bars"></i>
-        <i class='bx bx-shopping-bag' id="cart-icon"></i>  
-        <!-- Tambahkan span notifikasi di atas ikon keranjang -->
-    <span class="cart-notification" id="cart-notification">0</span>
+      <i class='bx bx-shopping-bag' id="cart-icon"></i>
     </div>
  
 <!-- CART -->
-<div class="cart">
+<div class="cart" id="cart">
 
     <!-- YOUR CART -->
     <h2 class="cart-title">Your Cart</h2>
@@ -61,19 +59,57 @@
     </div>
 
     <!-- CHECK OUT BUTTON -->
-    <button type="button" class="btn-buy" onclick="showPopup()">Order Now</button>
-
-    <!-- POPUP -->
-    <div class="popup" id="popup">
-        <div class="popup-content">
-            <span class="close" onclick="closePopup()">&times;</span>
-            <h2>Order Successfully Placed! <i class='bx bx-check'></i></h2>
-        </div>
-    </div>
+    <button type="button" class="btn-buy">Order Now</button>
 
     <!-- CART CLOSE -->
     <i class='bx bx-x' id="cart-close"></i>
 </div>
+
+<!-- POP UP ORDER FORM -->
+<div class="order-modal" id="order-modal">
+    <div class="order-form">
+        <h2>Details Order</h2>
+
+        <!-- Your order summary section -->
+        <div id="order-summary" class="order-summary">
+            <h3>Your Order</h3>
+            <ul id="order-summary-list"></ul>
+            <p id="total-price">Total: Rp 0</p>
+        </div>
+
+        <form id="order-form">
+            <label for="fullname">Full Name:</label>
+            <input type="text" id="fullname" required>
+
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" required>
+
+            <label for="address">Address:</label>
+            <textarea id="address" required></textarea>
+
+            <label for="payment-method">Payment Method:</label>
+            <select id="payment-method" required>
+                <option value="cash">Cash</option>
+                <option value="dana">Dana</option>
+                <option value="ovo">OVO</option>
+                <option value="payleter">Payleter</option>
+            </select>
+
+            <label for="additional-message">Additional Message:</label>
+            <textarea id="additional-message"></textarea>
+
+            <button type="button" onclick="submitOrder()">Submit</button>
+        </form>
+    </div>
+</div>
+
+<div id="success-popup" class="popup">
+    <div class="popup-content">
+      <span class="close-popup" onclick="closeSuccessPopup()">&times;</span>
+      <div class="success-icon">&#10004;</div>
+      <p>Your order has been successfully placed!</p>
+    </div>
+  </div>
 </header>
 
 <!-- FILTER MENU CATEGORY1 -->
