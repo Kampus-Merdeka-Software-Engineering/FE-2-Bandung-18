@@ -118,13 +118,20 @@ function handle_buyOrder() {
     return;
   }
 
+  // Save cart items to local storage before clearing the cart
+  saveCartToLocalStorage();
+
   const cartContent = cart.querySelector(".cart-content");
   cartContent.innerHTML = "";
 
   itemsAdded = [];
   saveCartToLocalStorage(); // Save cart items to Local Storage
   update();
+
+  // Display the order modal
+  showOrderModal();
 }
+
 
 // =========== UPDATE & RERENDER FUNCTIONS =========
 function updateTotal() {
@@ -185,8 +192,6 @@ function loadCartFromLocalStorage() {
   }
 }
 
-
-
 // =============== HANDLE ORDER MODAL FUNCTIONS ===============
 function showOrderModal() {
   // Cek apakah keranjang tidak kosong sebelum menampilkan formulir pesanan
@@ -219,7 +224,6 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
-
 function submitOrder() {
   // Collect form data
   const fullname = document.getElementById("fullname").value;
@@ -246,6 +250,9 @@ function submitOrder() {
     items: itemsAdded
   });
 
+  // Clear the cart items from local storage after order submission
+  clearCartFromLocalStorage();
+
   // Display confirmation message
   showSuccessPopup();
 }
@@ -271,7 +278,6 @@ function clearOrderFromLocalStorage() {
 }
 
 
-
 document.addEventListener("DOMContentLoaded", function () {
   // Load order details from local storage when the page is loaded
   loadOrderFromLocalStorage();
@@ -286,12 +292,9 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
-
-
 // Update your existing buy button event listener
 const buy_btn = document.querySelector(".btn-buy");
 buy_btn.addEventListener("click", showOrderModal);
-
 
 
 // function pop-up
