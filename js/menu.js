@@ -20,12 +20,13 @@ if (document.readyState == "loading") {
 
 // =============== START ====================
 function start() {
+  loadCartFromLocalStorage(); // Load cart items from Local Storage
+  update();
   addEvents();
 }
 
 // ============= UPDATE & RERENDER ===========
 function update() {
-  addEvents();
   updateTotal();
 }
 
@@ -33,7 +34,6 @@ function update() {
 function addEvents() {
   // Remove items from cart
   let cartRemove_btns = document.querySelectorAll(".cart-remove");
-  console.log(cartRemove_btns);
   cartRemove_btns.forEach((btn) => {
     btn.addEventListener("click", handle_removeCartItem);
   });
@@ -54,6 +54,7 @@ function addEvents() {
   const buy_btn = document.querySelector(".btn-buy");
   buy_btn.addEventListener("click", handle_buyOrder);
 }
+
 
 // ============= HANDLE EVENTS FUNCTIONS =============
 let itemsAdded = [];
@@ -77,6 +78,7 @@ function handle_addCartItem() {
     return;
   } else {
     itemsAdded.push(newToAdd);
+    saveCartToLocalStorage(); // Save cart items to Local Storage
   }
 
   // Add product to cart
@@ -96,7 +98,7 @@ function handle_removeCartItem() {
       el.title !=
       this.parentElement.querySelector(".cart-product-title").innerHTML
   );
-
+  saveCartToLocalStorage(); // Save cart items to Local Storage
   update();
 }
 
@@ -106,6 +108,7 @@ function handle_changeItemQuantity() {
   }
   this.value = Math.floor(this.value); // to keep it integer
 
+  saveCartToLocalStorage(); // Save cart items to Local Storage
   update();
 }
 
@@ -122,10 +125,9 @@ function handle_buyOrder() {
   window.alert("Your Order is Placed Successfully :)");
 
   itemsAdded = [];
-
+  saveCartToLocalStorage(); // Save cart items to Local Storage
   update();
 }
-
 
 // =========== UPDATE & RERENDER FUNCTIONS =========
 function updateTotal() {
@@ -147,6 +149,11 @@ function updateTotal() {
   totalElement.innerHTML = "Rp" + " " + total;
 }
 
+function update() {
+  updateTotal();
+  addEvents(); // Tambahkan kembali event listener setelah merender ulang elemen
+}
+
 // ============= HTML COMPONENTS =============
 function CartBoxComponent(title, price, imgSrc) {
   return `
@@ -161,5 +168,26 @@ function CartBoxComponent(title, price, imgSrc) {
         <i class='bx bxs-trash-alt cart-remove'></i>
     </div>`;
 }
+
+// =============== LOCAL STORAGE ===============
+function saveCartToLocalStorage() {
+  localStorage.setItem("cartItems", JSON.stringify(itemsAdded));
+}
+
+function loadCartFromLocalStorage() {
+  const storedCart = localStorage.getItem("cartItems");
+  if (storedCart) {
+    itemsAdded = JSON.parse(storedCart);
+    itemsAdded.forEach((item) => {
+      let cartBoxElement = CartBoxComponent(item.title, item.price, item.imgSrc);
+      let newNode = document.createElement("div");
+      newNode.innerHTML = cartBoxElement;
+      const cartContent = cart.querySelector(".cart-content");
+      cartContent.appendChild(newNode);
+    });
+  }
+}
+
+
 
 
