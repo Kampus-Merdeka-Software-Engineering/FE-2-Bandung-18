@@ -149,6 +149,13 @@ section:nth-child(even){
     color: var(--red);
     padding-bottom: 20px;
     text-transform: none;
+    text-shadow: 1px 1px 1px var(--cream),
+        1px 2px 1px  var(--cream),
+        1px 3px 1px  var(--cream),
+        1px 4px 1px #919191,
+        1px 5px 1px #919191,
+    1px 15px 15px rgba(16,16,16,0.2),
+    1px 10px 10px rgba(16,16,16,0.4);
 }
 
 .welcome-h2 {
@@ -216,6 +223,13 @@ section:nth-child(even){
     font-weight: 500;
     color: var(--pink);
     padding-bottom: 20px;
+    text-shadow: 1px 1px 1px var(--cream),
+        1px 2px 1px  var(--cream),
+        1px 3px 1px  var(--cream),
+        1px 4px 1px #919191,
+        1px 5px 1px #919191,
+    1px 15px 15px rgba(16,16,16,0.2),
+    1px 10px 10px rgba(16,16,16,0.4);
 }
 
 .categorytext2{
@@ -238,7 +252,7 @@ section:nth-child(even){
 .category {
     text-align: center;
     padding-bottom: 15px;
-  }
+}
   
 .categoryimages {
     display: flex;
@@ -335,14 +349,20 @@ section:nth-child(even){
     font-family: 'Marko One', serif;
     font-size: 28px;
     font-weight: 500;
-    color: var(--pink);
+    color: var(--red);
     padding-top: 0.1px;
     padding-bottom: 10px;
+    text-shadow: 1px 1px 1px var(--yellow),
+        1px 2px 1px  var(--yellow),
+        1px 3px 1px  var(--cream),
+        1px 4px 1px var(--cream),
+    1px 15px 15px rgba(16,16,16,0.2),
+    1px 10px 10px rgba(16,16,16,0.4);
 }
 .howTo-ordertext2{
     font-family: 'Gupter', serif;
     font-size: 16px;
-    font-weight: 600;
+    font-weight: 500;
     text-transform: none;
     padding-bottom: 20px;
 }
@@ -479,7 +499,7 @@ section:nth-child(even){
 
 /* CONTACT US */
 .contact-us {
-    background: linear-gradient(to top, #EBD8CC, #F7F5EB);
+    background: linear-gradient(to top, #e28f8e, #F7F5EB);
     padding-top: 40px;
 }
 
@@ -532,8 +552,14 @@ section:nth-child(even){
     font-family: 'Marko One', serif;
     padding-top: 10px;
     margin-bottom: 15px;
-    color: var(--pink);
+    color: var(--yellow);
     font-size: 28px;
+    text-shadow: 1px 1px 1px var(--red),
+        1px 2px 1px  var(--red),
+        1px 3px 1px  var(--red),
+        1px 5px 1px var(--red),
+    1px 10px 10px rgba(16,16,16,0.2),
+    1px 10px 10px rgba(16,16,16,0.4);
 
 }
 
@@ -608,6 +634,38 @@ button {
     font-size: 30px;
     cursor: pointer;
 }
+
+.falsepopup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    align-items: center;
+    justify-content: center;
+}
+
+.falsepopup-contact {
+    background-color: var(--cream);
+    padding: 30px;
+    margin: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.falsepopup-contact h2 {
+    color: var(--red);
+    padding: 50px;
+}
+
+.falseclose {
+    float: right;
+    font-size: 30px;
+    cursor: pointer;
+}
+
 
 
 

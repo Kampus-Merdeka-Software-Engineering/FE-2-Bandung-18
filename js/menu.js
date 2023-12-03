@@ -79,6 +79,7 @@ function handle_addCartItem() {
   } else {
     itemsAdded.push(newToAdd);
     saveCartToLocalStorage(); // Save cart items to Local Storage
+    update(); // Update the cart display
   }
 
   // Add product to cart
@@ -192,18 +193,36 @@ function loadCartFromLocalStorage() {
   }
 }
 
+function updateOrderSummary() {
+  const orderSummaryList = document.getElementById("order-summary-list");
+  orderSummaryList.innerHTML = ""; // Bersihkan daftar sebelum memperbarui
+
+  // Tambahkan setiap item dari keranjang ke dalam daftar
+  itemsAdded.forEach((item) => {
+    const listItem = document.createElement("li");
+    listItem.textContent = `${item.title} - ${item.price}`;
+    orderSummaryList.appendChild(listItem);
+  });
+
+  // Perbarui total harga pada ringkasan pesanan
+  const totalElement = document.getElementById("total-price");
+  let total = itemsAdded.reduce((acc, item) => acc + parseFloat(item.price.replace("Rp", "")), 0);
+  totalElement.textContent = `Total: Rp ${total.toFixed(3)}`;
+}
+
+
 // =============== HANDLE ORDER MODAL FUNCTIONS ===============
 function showOrderModal() {
   // Cek apakah keranjang tidak kosong sebelum menampilkan formulir pesanan
   if (itemsAdded.length > 0) {
+    // Perbarui ringkasan pesanan sebelum menampilkan formulir
+    updateOrderSummary();
+
     const orderModal = document.getElementById("order-modal");
     orderModal.style.display = "block";
 
     // Simpan status formulir pesanan ke localStorage
     localStorage.setItem("orderFormVisible", "true");
-  } else {
-    // Jika keranjang kosong, berikan pesan atau lakukan tindakan yang sesuai
-    alert("\nPlease Make an Order first.");
   }
 }
 
@@ -250,12 +269,30 @@ function submitOrder() {
     items: itemsAdded
   });
 
-  // Clear the cart items from local storage after order submission
-  clearCartFromLocalStorage();
-
   // Display confirmation message
   showSuccessPopup();
+
+  // Clear the form fields after submission
+  clearFormFields();
+
+  // Close the order modal
+  closeOrderModal();
+
+  // Clear the cart and update order summary in local storage
+  itemsAdded = [];
+  saveCartToLocalStorage();
+  updateOrderSummary();
 }
+
+function clearFormFields() {
+  // Clear the form fields
+  document.getElementById("fullname").value = "";
+  document.getElementById("phone").value = "";
+  document.getElementById("address").value = "";
+  document.getElementById("payment-method").value = "";
+  document.getElementById("additional-message").value = "";
+}
+
 
 function saveOrderToLocalStorage(orderDetails) {
   // Save order details to local storage
@@ -292,10 +329,6 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
-// Update your existing buy button event listener
-const buy_btn = document.querySelector(".btn-buy");
-buy_btn.addEventListener("click", showOrderModal);
-
 
 // function pop-up
 function showSuccessPopup() {
@@ -318,4 +351,8 @@ function closeSuccessPopup() {
   successPopup.style.display = "none";
   document.getElementById("popup-overlay").style.display = "none";
 }
+
+// Update your existing buy button event listener
+const buy_btn = document.querySelector(".btn-buy");
+buy_btn.addEventListener("click", showOrderModal);
 

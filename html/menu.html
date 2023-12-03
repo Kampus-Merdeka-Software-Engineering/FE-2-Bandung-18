@@ -26,13 +26,12 @@
 </head>
 
 <body>
-<!-- HEADER SECTION -->
+<!---------------------- HEADER SECTION ---------------------->
 <header>
     <img class="logo" src="../assets/image_home/Logo.png">
 
     <div class="navbar active">
         <a href="../index.html">HOME</a>
-        <a href="../index.html#Review">MENU DETAILS</a>
         <a href="menu.html">ORDER</a>
         <a href="../index.html#contact-us">CONTACT US</a>
         <a href="about_us.html">ABOUT US</a>
@@ -43,7 +42,7 @@
       <i class='bx bx-shopping-bag' id="cart-icon"></i>
     </div>
  
-<!-- CART -->
+<!---------------------- SHOPPING CART ---------------------->
 <div class="cart" id="cart">
 
     <!-- YOUR CART -->
@@ -65,26 +64,28 @@
     <i class='bx bx-x' id="cart-close"></i>
 </div>
 
-<!-- POP UP ORDER FORM -->
+<!---------------------- POP UP ORDER FORM ---------------------->
 <div class="order-modal" id="order-modal">
     <div class="order-form">
         <h2>Details Order</h2>
 
-        <!-- Your order summary section -->
-        <div id="order-summary" class="order-summary">
-            <h3>Your Order</h3>
-            <ul id="order-summary-list"></ul>
-            <p id="total-price">Total: Rp 0</p>
-        </div>
+        <div class="order-content">
+            <!-- Your order summary section -->
+            <div id="order-summary" class="order-summary">
+                <h3>Your Order</h3>
+                <ul id="order-summary-list"></ul>
+                <p id="total-price">Total: Rp 0</p>
+            </div>
 
-        <form id="order-form">
-            <label for="fullname">Full Name:</label>
+            <!-- Form -->
+            <form id="order-form">
+                <label for="fullname">Full Name:</label>
             <input type="text" id="fullname" required>
 
             <label for="phone">Phone Number:</label>
             <input type="tel" id="phone" required>
 
-            <label for="address">Address:</label>
+            <label for="address">Full Address:</label>
             <textarea id="address" required></textarea>
 
             <label for="payment-method">Payment Method:</label>
@@ -101,20 +102,23 @@
             <textarea id="additional-message"></textarea>
 
             <button type="button" onclick="submitOrder()">Submit</button>
-        </form>
+            </form>
+        </div>
     </div>
 </div>
 
+<!---------------------- SUCCESS POP UP ---------------------->
 <div id="success-popup" class="popup">
     <div class="popup-content">
       <span class="close-popup" onclick="closeSuccessPopup()">&times;</span>
       <div class="success-icon">&#10004;</div>
       <p>Your order has been successfully placed!</p>
     </div>
-  </div>
+    <div id="popup-overlay" style="display: none;"></div>
+</div>
 </header>
 
-<!-- FILTER MENU CATEGORY1 -->
+<!---------------------- FILTER MENU CATEGORY ---------------------->
 <div class="menu-categorysection" id="menu-category">
     <div class="menu-categoryimages">
         <div class="menu-category">
@@ -164,7 +168,7 @@
     </div>
 </div>
 
-<!-- ORDER SECTION-->
+<!---------------------- ORDER SECTION ---------------------->
 <div class="welcomeMenu">
     <div class="welcomeMenu-description">
       <h1 class="welcomeMenu-title">ORDER NOW!</h1>
@@ -179,7 +183,7 @@
     </div>
 </div>
 
-<!-- DESSERT BOX SECTION -->
+<!---------------------- DESSERT BOX SECTION ---------------------->
 <section class="ourMenu-container" id="dessert-box">
     <h1 class="section-title">DESSERT BOX</h1>
     <p class="section-title1">Discover our dessert boxes at Blissweet! We offer a variety of flavors to satisfy your cravings. Choose your favorite and enjoy the enjoyable experience.</p>
@@ -231,7 +235,7 @@
     </div>
 </section>
 
-<!-- DCUPCAKES SECTION -->
+<!---------------------- CUPCAKES SECTION ---------------------->
 <section class="ourMenu-container" id="cupcakes">
     <h1 class="section-title">CUPCAKES</h1>
     <p class="section-title1">Discover our cupcakes at Blissweet! We offer a variety of flavors to satisfy your cravings. Choose your favorite and enjoy the enjoyable experience.</p>
@@ -304,7 +308,7 @@
     </div>
 </section>
 
-<!-- SMOOTHIES SECTION -->
+<!---------------------- SMOOTHIES SECTION ---------------------->
 <section class="ourMenu-container" id="smoothies">
     <h1 class="section-title">SMOOTHIES</h1>
     <p class="section-title1">Discover our Smoothies at Blissweet! We offer a variety of flavors to satisfy your cravings. Choose your favorite and enjoy the enjoyable experience.</p>
@@ -370,7 +374,7 @@
     </div>
 </section>
 
-<!-- PIES SECTION -->
+<!---------------------- PIES SECTION ---------------------->
 <section class="ourMenu-container" id="pies">
     <h1 class="section-title">PIES</h1>
     <p class="section-title1">Discover our Pies at Blissweet! We offer a variety of flavors to satisfy your cravings. Choose your favorite and enjoy the enjoyable experience.</p>
@@ -422,7 +426,7 @@
     </div>
 </section>
 
-<!-- BROWNIES SECTION -->
+<!---------------------- BROWNIES SECTION ---------------------->
 <section class="ourMenu-container" id="brownies">
     <h1 class="section-title">BROWNIES</h1>
     <p class="section-title1">Discover our brownies at Blissweet! We offer a variety of flavors to satisfy your cravings. Choose your favorite and enjoy the enjoyable experience.</p>
@@ -474,7 +478,7 @@
     </div>
 </section>
 
-<!--FOOTER SECTION-->
+<!---------------------- FOOTER SECTION ---------------------->
 <footer>
     <div class="container">
       <article>
@@ -503,7 +507,6 @@
       <article>
         <h3>Permalinks</h3>
         <a href="../index.html#home">Home</a>
-        <a href="../index.html#menu-details">Menu Details</a>
         <a href="../html/menu.html">Order Now</a>
         <a href="../index.html#contact-us">Contact Us</a>
         <a href="../html/about_us.html">About Us</a>
@@ -516,14 +519,13 @@
 </footer>
 
 
-<!-- link js  -->
+
+
+
+
+
+<!---------------------- LINK JAVASCRIPT ---------------------->
 <script src="../js/menu.js"></script>
 <script src="../js/script.js"></script>
-
-
-
-
-
-
 </body>
 </html>

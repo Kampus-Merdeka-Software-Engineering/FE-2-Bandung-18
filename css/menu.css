@@ -1,6 +1,6 @@
 /* FILTER MENU CATEGORY */
 .menu-categorysection {
-  background: linear-gradient(to top, #EBD8CC, #ffffff);;
+  background: linear-gradient(to top, #EBD8CC, #ffffff);
   padding-top: 90px;
   padding-bottom: 0.5px;
   border: 5px solid #8B342A;
@@ -155,8 +155,8 @@
   cursor: pointer;
 }
 
-/* Add this code to your existing CSS or create a new CSS file */
-#order-modal {
+/* ORDER FORM */
+.order-modal {
   display: none;
   position: fixed;
   top: 0;
@@ -167,95 +167,69 @@
 }
 
 .order-form {
-  background-color: #fff;
-  max-width: 400px;
-  margin: 10% auto;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-}
-
-.order-summary {
-  margin-bottom: 20px;
-}
-
-#order-summary-list {
-  list-style-type: none;
-  padding: 0;
-}
-
-#order-summary-list li {
-  margin-bottom: 10px;
-}
-
-#total-price {
-  font-weight: bold;
-}
-
-.order-form h2 {
-  text-align: center;
-}
-
-.order-form label {
-  display: block;
-  margin-top: 10px;
-}
-
-.order-form input,
-.order-form textarea,
-.order-form select {
-  width: 100%;
-  padding: 8px;
-  margin-top: 5px;
-  box-sizing: border-box;
-}
-
-.order-form button {
-  width: 100%;
-  padding: 10px;
-  margin-top: 10px;
-  background-color: #4caf50;
-  color: #fff;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-.order-form button:hover {
-  background-color: #45a049;
-}
-
-#order-modal {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-}
-
-.order-form {
-  background-color: #fff;
-  max-width: 400px;
-  width: 80%; /* Adjusted for responsiveness */
+  background: linear-gradient(62deg, #eee3b6 0%, #e28f8e 100%);
+  max-width: 520px;
+  width: 80%;
   margin: auto;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   padding: 20px;
-  border-radius: 8px;
+  border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
 }
 
 .order-form h2 {
   text-align: center;
+  padding-top: 10px;
+  margin-bottom: 20px;
+  text-decoration: underline;
+  font-size: 28px;
 }
+
+#order-summary h3 {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: 20px;
+  color: var(--red);
+}
+
+#order-summary-list {
+  list-style-type: none;
+  padding: 10px 0px;
+  font-size: 14px;
+}
+
+#order-summary p {
+  font-size: 20px;
+  text-decoration: overline;
+  font-weight: 600px;
+  color: var(--red);
+}
+
+.order-content {
+  display: flex;
+  justify-content: space-between;
+}
+
+.order-summary {
+  width: 48%; 
+  margin-bottom: 20px;
+}
+
+
+#order-summary-list li {
+  margin-bottom: 10px;
+}
+
 
 .order-form label {
   display: block;
   margin-top: 10px;
+  font-size: 14px;
 }
 
 .order-form input,
@@ -272,16 +246,15 @@
   padding: 10px;
   margin-top: 10px;
   background-color: #4caf50;
-  color: #fff;
+  color: var(--cream);
   border: none;
   border-radius: 4px;
   cursor: pointer;
 }
 
 .order-form button:hover {
-  background-color: #45a049;
+  background-color: var(--red);
 }
-
 
 .popup {
   display: none;
@@ -289,27 +262,29 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: #fff;
+  background-color:#ffffff;
   padding: 20px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   z-index: 1000;
-  max-width: 400px; /* Atur lebar maksimum sesuai kebutuhan Anda */
+  max-width: 350px;
   width: 100%;
-  max-height: 80vh; /* Menetapkan tinggi maksimum agar tidak menutupi seluruh layar */
-  overflow-y: auto; /* Menambahkan scrolling jika kontennya terlalu panjang */
+  max-height: 40vh; 
+  border-radius: 20px;
 }
 
 .popup-content {
   text-align: center;
+  color: var(--red);
+  font-size: 18px;
 }
 
 .close-popup {
   position: absolute;
   top: 10px;
   right: 10px;
-  font-size: 20px;
+  font-size: 50px;
   cursor: pointer;
-  color: #333;
+  color: var(--red);
 }
 
 .success-icon {
@@ -317,11 +292,6 @@
   color: #4CAF50;
   margin-bottom: 20px;
 }
-
-
-
-
-
 
 /* WELCOME OUR MENU */
 .welcomeMenu {
@@ -342,29 +312,26 @@
 .welcomeMenu-title {
   font-family: 'Marko One', serif;
   font-weight: 550;
-  color: var(--pink);
+  color: var(--red);
   padding-bottom: 5px;
   text-align: center;
   padding-top: 30px;
   font-size: 30px;
+  text-shadow: 1px 1px 1px var(--red),
+        1px 2px 1px  var(--cream),
+        1px 3px 1px  var(--cream),
+        1px 4px 1px #ffffff,
+    1px 15px 15px rgba(16, 16, 16, 0.2),
+    1px 10px 10px rgba(16,16,16,0.4);
 }
 
-.welcomeMenu .welcomeMenu-description p {
-  margin-block: 1rem;
-  line-height: 2rem;
-  font-family: 'Gupter', serif;
-  font-weight: 500;
-  color: #000000;
-  text-align: justify;
-  text-transform: none;
-  font-size: 20px;
-}
 
 .welcomeMenu-isi {
   max-width: 600px;
   width: 100%;
   height: 5px;
   margin-left: 10px;
+  text-transform: none;
 }
 
 .welcomeMenu .welcomeMenu-image {
@@ -399,7 +366,12 @@
   text-align: center;
   padding-top: 60px;
   padding-bottom: 20px;
-  text-decoration: underline;
+  text-shadow: 1px 1px 1px var(--pink),
+        1px 2px 1px  var(--cream),
+        1px 3px 1px  var(--cream),
+        1px 4px 1px #ffffff,
+    1px 15px 15px rgba(16, 16, 16, 0.2),
+    1px 10px 10px rgba(16,16,16,0.4);
 }
 
 .section-title1{
@@ -408,13 +380,14 @@
   font-weight: 300;
   text-transform: none;
   text-align: center;
+
 }
 
 .ourMenu-content{
   display: grid;
   grid-template-columns: repeat(3, minmax(200px, auto));
   gap: 5rem;
-  padding: 5rem 7rem;
+  padding: 5rem 10rem;
 }
 
 .product-box{
@@ -473,6 +446,8 @@
   border-bottom-right-radius: 20px;
   border-top-left-radius: 20px;
 }
+
+
 
 
 
@@ -554,6 +529,22 @@
   .section-title1{
     padding: 0 20px;
   }
+
+  .order-form h2 {
+    font-size: 20px;
+  }
+  
+  #order-summary h3 {
+    font-size: 14px;
+  }
+  
+  #order-summary-list {
+    font-size: 12px;
+  }
+  
+  #order-summary p {
+    font-size: 14px;
+  }
 }
 
 
@@ -590,6 +581,25 @@
     grid-template-columns: repeat(2, minmax(150px, auto));
     gap: 4rem;
     padding: 6rem;
+  }
+  .order-form {
+    width: 100%; 
+    padding: 20px; 
+  }
+  .order-form label {
+    font-size: 12px;
+    margin-left: 30px;
+  }
+  .order-form input,
+  .order-form textarea,
+  .order-form select {
+  width: 80%;
+  margin-left: 30px;
+  box-sizing: border-box;
+  }
+  .order-form button {
+    width: 80%;
+    margin-left: 30px;
   }
 }
 
@@ -641,6 +651,21 @@
   .product-price {
     font-size: 20px;
     padding: 8px;
+  }
+  .order-form h2 {
+    font-size: 16px;
+  }
+  
+  #order-summary h3 {
+    font-size: 12px;
+  }
+  
+  #order-summary-list {
+    font-size: 10px;
+  }
+  
+  #order-summary p {
+    font-size: 12px;
   }
 
 }
@@ -723,6 +748,21 @@
     grid-template-columns: repeat(2, minmax(150px, auto));
     gap: 3rem;
     padding: 4rem;
+  }
+  .order-form h2 {
+    font-size: 16px;
+  }
+  
+  #order-summary h3 {
+    font-size: 12px;
+  }
+  
+  #order-summary-list {
+    font-size: 10px;
+  }
+  
+  #order-summary p {
+    font-size: 12px;
   }
 }
 

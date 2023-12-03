@@ -6,17 +6,24 @@ function submitForm() {
 
     // Memeriksa apakah kolom formulir telah diisi
     if (name.trim() === '' || message.trim() === '') {
-        // Menampilkan notifikasi jika formulir belum diisi
-        alert('Harap isi semua kolom formulir terlebih dahulu.');
+        // Menampilkan popup 'falsePopup' jika formulir belum diisi
+        document.getElementById('falsePopup').style.display = 'flex';
+        // Sembunyikan popup 'confirmationPopup' jika formulir belum diisi
+        document.getElementById('confirmationPopup').style.display = 'none';
+        return false; // Menghentikan pengiriman formulir
+
     } else {
-        // Simpan data formulir ke LocalStorage
-        localStorage.setItem('formData', JSON.stringify({ name, message }));
-
-        // Lakukan sesuatu dengan data formulir (simpan ke database, dll.)
-
-        // Tampilkan popup terima kasih
-        document.getElementById('confirmationPopup').style.display = 'flex';
+        // Sembunyikan popup 'falsePopup' jika formulir sudah diisi dengan benar
+        document.getElementById('falsePopup').style.display = 'none';
     }
+
+    // Simpan data formulir ke LocalStorage
+    localStorage.setItem('formData', JSON.stringify({ name, message }));
+
+    // Lakukan sesuatu dengan data formulir (simpan ke database, dll.)
+
+    // Tampilkan popup terima kasih
+    document.getElementById('confirmationPopup').style.display = 'flex';
 
     // Reset formulir
     resetForm();
