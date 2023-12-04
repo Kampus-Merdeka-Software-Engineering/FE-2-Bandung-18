@@ -1,15 +1,24 @@
 let menu = document.querySelector('#menu-bars');
 let navbar = document.querySelector('.navbar');
+let navLinks = document.querySelectorAll('.navbar a');
 
-menu.onclick = () =>{
+menu.addEventListener('click', () => {
   menu.classList.toggle('fa-times');
   navbar.classList.toggle('active');
-}
-    
-window.onscroll = () =>{
+});
+
+// Close the menu when a link is clicked
+navLinks.forEach(link => {
+  link.addEventListener('click', () => {
+    menu.classList.remove('fa-times');
+    navbar.classList.remove('active');
+  });
+});
+
+window.addEventListener('scroll', () => {
   menu.classList.remove('fa-times');
   navbar.classList.remove('active');
-}
+});
 
 
 
