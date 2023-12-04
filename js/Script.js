@@ -7,7 +7,6 @@ menu.addEventListener('click', () => {
   navbar.classList.toggle('active');
 });
 
-// Close the menu when a link is clicked
 navLinks.forEach(link => {
   link.addEventListener('click', () => {
     menu.classList.remove('fa-times');
