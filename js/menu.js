@@ -328,8 +328,6 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
-
-
 // function pop-up
 function showSuccessPopup() {
   const successPopup = document.getElementById("success-popup");
