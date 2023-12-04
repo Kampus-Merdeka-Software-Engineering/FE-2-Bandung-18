@@ -1,17 +1,24 @@
-let menuBars = document.getElementById('menu-bars');
-    let navbar = document.querySelector('.navbar');
+let menu = document.querySelector('#menu-bars');
+let navbar = document.querySelector('.navbar');
+let navLinks = document.querySelectorAll('.navbar a');
 
-    menuBars.addEventListener('click', () => {
-        navbar.classList.toggle('active');
-    });
+menu.addEventListener('click', () => {
+  menu.classList.toggle('fa-times');
+  navbar.classList.toggle('active');
+});
 
-    // Tambahkan event listener untuk menutup navbar saat salah satu link diklik
-    let navLinks = document.querySelectorAll('.navbar a');
-    navLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            navbar.classList.remove('active');
-        });
-    });
+navLinks.forEach(link => {
+  link.addEventListener('click', () => {
+    menu.classList.remove('fa-times');
+    navbar.classList.remove('active');
+  });
+});
+
+window.addEventListener('scroll', () => {
+  menu.classList.remove('fa-times');
+  navbar.classList.remove('active');
+});
+
 
 
 
