@@ -25,7 +25,7 @@ const displayMenu= (menu) => {
         const div = document.createElement("div")
         div.innerHTML = `
         <h3>${menu.name}</h3>
-        <p>Price: ${menu.price}</p>
+        <p>${menu.price}</p>
         `
         section.appendChild(div);
         
