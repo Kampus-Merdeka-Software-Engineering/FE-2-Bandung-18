@@ -1,3 +1,4 @@
+// AUTO SLIDER
 var swiper = new Swiper(".home-slider", {
     spaceBetween: 30,
     centeredSlides: true,
