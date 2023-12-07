@@ -19,16 +19,20 @@ const fetchAllMenu = async () => {
     }
 };
 
-const displayMenu= (menu) => {
-    const section = document.getElementById("dessert-box")
-    menu.forEach((menu) => {
-        const div = document.createElement("div")
-        div.innerHTML = `
-        <h3>${menu.name}</h3>
-        <p>${menu.price}</p>
-        `
-        section.appendChild(div);
-        
+const displayMenu = (menu) => {
+    const section = document.querySelector(".ourMenu-content");
+    section.innerHTML = ''; 
+  
+    menu.forEach((menuItem) => {
+      const div = document.createElement("div");
+      div.classList.add("product-box"); // Tambahkan kelas product-box
+      div.innerHTML = `
+        <img src=${menuItem.images} alt="" class="product-img">
+        <h2 class="product-title">${menuItem.name}</h2>
+        <span class="product-price">Rp ${menuItem.price.toLocaleString()}</span>
+        <i class='bx bx-shopping-bag add-cart'></i>
+      `;
+      section.appendChild(div);
     });
-};
-
+  };
+  
