@@ -1,5 +1,5 @@
 // CONTACT US
-async function submitForm() {
+function submitForm() {
     const name = document.getElementById('name').value;
     const message = document.getElementById('message').value;
 
@@ -11,26 +11,18 @@ async function submitForm() {
         document.getElementById('falsePopup').style.display = 'none';
     }
 
-    try {
-        const response = await fetch('http://localhost:3001/contactus', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({ name, message }),
-        });
+    // Save form data to LocalStorage
+    saveDataToLocalStorage(name, message);
 
-        if (!response.ok) {
-            throw new Error(`HTTP error! Status: ${response.status}`);
-        }
+    // Do something with the form data (e.g., send to the server, save to a database, etc.)
 
-        document.getElementById('confirmationPopup').style.display = 'flex';
-        resetForm();
-    } catch (error) {
-        console.error('Error:', error);
-    }
+    document.getElementById('confirmationPopup').style.display = 'flex';
+
+    resetForm();
+
     return false;
 }
+
 
 
 function saveDataToLocalStorage(name, message) {
