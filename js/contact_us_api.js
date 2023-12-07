@@ -1,5 +1,4 @@
-// CONTACT US
-function submitForm() {
+async function submitForm() {
     const name = document.getElementById('name').value;
     const message = document.getElementById('message').value;
 
@@ -11,14 +10,27 @@ function submitForm() {
         document.getElementById('falsePopup').style.display = 'none';
     }
 
-    // Save form data to LocalStorage
-    saveDataToLocalStorage(name, message);
+    try {
+        const response = await fetch('https://lazy-blue-fawn-toga.cyclic.app', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ name, message }),
+        });
 
-    // Do something with the form data (e.g., send to the server, save to a database, etc.)
+        if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+        }
 
-    document.getElementById('confirmationPopup').style.display = 'flex';
+        const responseData = await response.json();
+        console.log('Server Response:', responseData);
 
-    resetForm();
+        document.getElementById('confirmationPopup').style.display = 'flex';
+        resetForm();
+    } catch (error) {
+        console.error('Error:', error);
+    }
 
     return false;
 }
