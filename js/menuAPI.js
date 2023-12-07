@@ -1,14 +1,13 @@
 const API_URL = "http://localhost:3001"
 
 document.addEventListener("DOMContentLoaded", async () => {
-    // fetchAllMenu();
     if (window.location.pathname.includes("menu.html")) {
-        await fetchAllMenu()
+        await fetchMenu()
     }
 
 });
 
-const fetchAllMenu = async () => {
+const fetchMenu = async () => {
     try {
       const response = await fetch (`${API_URL}/menuDessertbox`);
       const menu = await response.json();
@@ -25,7 +24,7 @@ const displayMenu = (menu) => {
   
     menu.forEach((menuItem) => {
       const div = document.createElement("div");
-      div.classList.add("product-box"); // Tambahkan kelas product-box
+      div.classList.add("product-box"); 
       div.innerHTML = `
         <img src=${menuItem.images} alt="" class="product-img">
         <h2 class="product-title">${menuItem.name}</h2>
