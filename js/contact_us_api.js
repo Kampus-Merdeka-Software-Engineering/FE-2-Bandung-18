@@ -11,7 +11,7 @@ async function submitForm() {
     }
 
     try {
-        const response = await fetch('https://lazy-blue-fawn-toga.cyclic.app', {
+        const response = await fetch('https://lazy-lime-lovebird-wrap.cyclic.app/messages', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -34,7 +34,6 @@ async function submitForm() {
 
     return false;
 }
-
 
 
 function saveDataToLocalStorage(name, message) {

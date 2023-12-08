@@ -228,13 +228,6 @@ img{
   border-color: #fff;
 }
 
-
-
-
-
-
-
-
 /* ================ TAMPILAN RESPONSIVE ============= */
 @media (max-width: 1045px) {
   .wrapper .box{
@@ -274,8 +267,6 @@ img{
       width: 50%;
       margin-bottom: 10px;
   }
-
-  .pro
 }
 
 @media (max-width: 450px) {
