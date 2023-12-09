@@ -11,7 +11,7 @@ async function submitForm() {
     }
 
     try {
-        const response = await fetch('https://lazy-lime-lovebird-wrap.cyclic.app/messages', {
+        const response = await fetch('https://be-2-bandung-18-production.up.railway.app/messages', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

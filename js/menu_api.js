@@ -1,4 +1,4 @@
-const API_URL = "https://lazy-lime-lovebird-wrap.cyclic.app";
+const API_URL = "https://be-2-bandung-18-production.up.railway.app";
 
 document.addEventListener("DOMContentLoaded", async () => {
     if (window.location.pathname.includes("menu.html")) {
@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
 const fetchMenu = async () => {
     try {
-        const response = await fetch(`${API_URL}/menuDessertbox`); 
+        const response = await fetch(`${API_URL}/menuDessertbox`); // Gunakan URL lengkap menuDessertbox
         const menu = await response.json();
         console.log(menu);
         displayMenu(menu);
@@ -33,4 +33,5 @@ const displayMenu = (menu) => {
         section.appendChild(div);
     });
 };
+
 
