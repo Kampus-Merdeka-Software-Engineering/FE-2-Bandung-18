@@ -1,3 +1,4 @@
+//API GET
 const API_URL = "https://be-2-bandung-18-production.up.railway.app";
 
 document.addEventListener("DOMContentLoaded", async () => {
