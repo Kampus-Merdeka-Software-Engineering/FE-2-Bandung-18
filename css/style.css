@@ -224,7 +224,7 @@ section:nth-child(even){
 .categorytext2{
     font-family: 'Gupter', serif;
     font-size: 16px;
-    font-weight: 600;
+    font-weight: 500;
     text-transform: none;
 }
 
@@ -554,9 +554,10 @@ section:nth-child(even){
 
 .contact-right p {
     font-family: 'Gupter', serif;
+    font-size: 14px;
     margin-bottom: 20px;
     color: #000000;
-    text-transform: none;
+    text-transform: none;    
 }
 
 .contact-text1 {
@@ -565,6 +566,7 @@ section:nth-child(even){
 
 label {
     display: block;
+    font-size: 14px;
     margin-bottom: 5px;
     margin-top: 10px;
     color: var(--red);
@@ -845,7 +847,8 @@ footer .copyright p {
     }
       
     .welcome .welcome-description p {
-        font-size: 14px;
+        font-size: 16px;
+        text-align: justify;
     }
       
     .welcome .welcome-image {
@@ -898,9 +901,20 @@ footer .copyright p {
         text-align: center;
     }
 
+    .welcome .welcome-image{
+        padding-top: 15px;
+        max-width: 60%;
+    }
+
     .welcome-description {
         order: 1;
         padding: 10px;
+    }
+
+    .welcome .welcome-description p {
+        font-size: 16px;
+        padding-left: 35px;
+        text-align: justify;
     }
 
     footer .container {
@@ -934,14 +948,14 @@ footer .copyright p {
     }
       
     .welcome .welcome-description p {
-        font-size: 10;
+        font-size: 14;
         padding-left: 35px;
         text-align: justify;
     }
       
     .welcome .welcome-image{
         padding-top: 15px;
-        max-width: 40%;
+        max-width: 60%;
     }
     
     .btn-aboutUs {
@@ -965,6 +979,33 @@ footer .copyright p {
         width: 100%; 
         max-width: 150px;
         height: 190px;
+    }
+    .contact-right p {
+    font-family: 'Gupter', serif;
+    margin-bottom: 20px;
+    color: #000000;
+    text-transform: none;
+    }
+}
+
+@media (max-width: 380px) {
+    .categorytext2 {
+        font-size: 15px;
+    }
+    .categorytext3 {
+        font-size: 15px;
+    }
+    .categoryimages {
+        margin: 12px 16px; 
+    }
+    .categoryimages img {
+        width: 100%; 
+        max-width: 150px; 
+        height: auto; 
+        margin-bottom: 14px; 
+    }
+    .productname {
+        padding-top: 20px;
     }
 }
 

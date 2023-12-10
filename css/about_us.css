@@ -32,7 +32,13 @@
     color: #E54313;
     padding-top: 5px;
     padding-bottom: 12px;
-    text-decoration: underline;
+    text-shadow: 1px 1px 1px #ffffff,
+        1px 2px 1px  #ffffff,
+        1px 3px 1px  #ffffff,
+        1px 4px 1px #919191,
+        1px 5px 1px #919191,
+    1px 15px 15px rgba(16,16,16,0.2),
+    1px 10px 10px rgba(16,16,16,0.4);
 }
 
 .aboutUs-text2 {
@@ -104,6 +110,13 @@ h1 {
     color: var(--red);
     font-family: 'Gupter', serif;
     padding-top: 2px;
+    text-shadow: 1px 1px 1px var(--yellow),
+        1px 2px 1px  var(--yellow),
+        1px 3px 1px  var(--yellow),
+        1px 4px 1px #919191,
+        1px 5px 1px #919191,
+    1px 15px 15px rgba(16,16,16,0.2),
+    1px 10px 10px rgba(16,16,16,0.4);
 }
 
 .card {
