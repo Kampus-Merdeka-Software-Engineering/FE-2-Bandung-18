@@ -859,7 +859,7 @@ footer .copyright p {
     }
     
     .btn-aboutUs {
-        font-size: 14px;
+        font-size: 16px;
         padding: 0.5rem 1.8rem;
     }
 
@@ -917,6 +917,11 @@ footer .copyright p {
         text-align: justify;
     }
 
+    .btn-aboutUs {
+        font-size: 16px;
+        padding: 0.7rem 1.8rem;
+    }
+
     footer .container {
       grid-template-columns: 1fr;
       text-align: center;
@@ -959,7 +964,7 @@ footer .copyright p {
     }
     
     .btn-aboutUs {
-        font-size: 12px;
+        font-size: 14px;
         padding: 0.7rem 1.8rem;
     }
 
