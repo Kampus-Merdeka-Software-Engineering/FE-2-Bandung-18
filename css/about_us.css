@@ -1,8 +1,7 @@
 /* ABOUT US SECTION */
 .about-us {
-    background: linear-gradient(to top, #E54313, #ffffff);
+    background: linear-gradient(to top, #ff3c00, #ffffff);
     margin-top: 20px;
-
 }
 
 .image {
@@ -84,10 +83,57 @@
     border-radius: 10px;
 }
 
+/* OUR GALLERY SECTION */
+.gallery {
+    padding: .7rem;
+    background: var(--cream)
+}
+
+.gallery-text {
+    text-align: center;
+    font-family: 'Marko One', serif;
+    font-size:35px; 
+    font-weight: 500;
+    color: var(--red);
+    padding-top: 30px;
+    padding-bottom: 10px;
+    text-shadow: 1px 1px 1px #ffffff,
+        1px 2px 1px  #ffffff,
+        1px 3px 1px  #ffffff,
+        1px 4px 1px #919191,
+        1px 5px 1px #919191,
+    1px 15px 15px rgba(16,16,16,0.2),
+    1px 10px 10px rgba(16,16,16,0.4);
+}
+
+.gallery-images {
+	width: 70%;
+	margin: 50px auto;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+	grid-gap: 40px;
+}
+
+.gallery-images img {
+	width: 100%;
+	cursor: pointer;
+	transition: 1s ease;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 1);
+}
+
+.gallery-images img:hover {
+	transform: scale(0.9);
+    padding: 10px;
+    border: 1px solid var(--box-shadow);
+    transition: .4s;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 1);
+}
+
 /* GROUP 18 SECTION */
 .team {
     padding: .7rem;
-    background: var(--cream);
+    background: linear-gradient(62deg, #eee3b6 0%, #f5d4d4 100%);
 }
 
 .our-team {
@@ -107,14 +153,14 @@ h1 {
     width: 100%;
     text-align: center;
     font-size: 40px;
-    color: var(--red);
+    color: #3F3836;
     font-family: 'Gupter', serif;
     padding-top: 2px;
-    text-shadow: 1px 1px 1px var(--yellow),
-        1px 2px 1px  var(--yellow),
-        1px 3px 1px  var(--yellow),
-        1px 4px 1px #919191,
-        1px 5px 1px #919191,
+    text-shadow: 1px 1px 1px #eee3b6,
+        1px 2px 1px  #ffffff,
+        1px 3px 1px  #ffffff,
+        1px 4px 1px #ffffff,
+        1px 5px 1px #743230,
     1px 15px 15px rgba(16,16,16,0.2),
     1px 10px 10px rgba(16,16,16,0.4);
 }
@@ -234,7 +280,6 @@ h1 {
     
 }
 
- 
 @media screen and (max-width: 600px){
     .Image img {
         position: static;
