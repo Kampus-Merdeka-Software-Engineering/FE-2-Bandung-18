@@ -1,5 +1,7 @@
 # BLISSWEET
 Blissweet Is A Dessert Platform With A Unique Aesthetic Specializing In Creating Delicious Treats To Enhance Your Mood.
+
+
 ![Alt text](https://github.com/Kampus-Merdeka-Software-Engineering/FE-2-Bandung-18/blob/main/assets/image_home/Logo.png?raw=true)
 
 # Features
