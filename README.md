@@ -5,7 +5,7 @@ Blissweet Is A Dessert Platform With A Unique Aesthetic Specializing In Creating
 ![Alt text](https://github.com/Kampus-Merdeka-Software-Engineering/FE-2-Bandung-18/blob/main/assets/image_home/Logo.png?raw=true)
 
 # Features
-* Cart: Show the items added to the cart and enable users to save products they are interested in without the obligation to make an immediate purchase.
+* <b>Cart:</b> Show the items added to the cart and enable users to save products they are interested in without the obligation to make an immediate purchase.
   ![Alt text](https://github.com/Kampus-Merdeka-Software-Engineering/FE-2-Bandung-18/blob/main/assets/image_readme/4.png?raw=true)
 * Checkout: Presentation of the cart contents, streamlined checkout process, and secure payment options.
   ![Alt text](https://github.com/Kampus-Merdeka-Software-Engineering/FE-2-Bandung-18/blob/main/assets/image_readme/5.png?raw=true)
