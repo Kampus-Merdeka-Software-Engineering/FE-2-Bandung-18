@@ -105,6 +105,92 @@
     background: linear-gradient(to right, #e28f8e 0%, #eee3b6 100%);
 }
 
+.blissweet-blog {
+    display: grid;
+    grid-template-columns: 1fr; 
+    background: var(--cream);
+}
+  
+.blissweet-blog .left {
+    padding: 10px;
+}
+  
+.blissweet-blog .left .img {
+    width: 100%;
+    max-width: 500px; 
+    height: auto;
+    display: block;
+    margin: 20px auto; 
+    border-radius: 20px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.5);
+}
+  
+.blissweet-blog .left > .title {
+    font-family: 'Gupter', serif;
+    font-size: 30px;
+    padding-top: 15px;
+    margin-top: 60px;
+    text-align: center;
+    padding: 30px 0;
+    color: var(--red);
+}
+  
+.blissweet-blog .left .text {
+    padding: 20px 15px 10px;
+}
+  
+.blissweet-blog .left .text .title h2 {
+    font-family: 'Gupter', serif;
+    font-size: 28px;
+    display: relative;
+    cursor: pointer;
+    color: #cd5200;
+    margin: 0 60px;
+    padding-bottom: 10px;
+}
+
+.blissweet-blog .left .text .meta {
+    font-size: 16px;
+    font-weight: 600;
+    margin: 0 60px;
+    padding-bottom: 30px;
+}
+  
+.blissweet-blog .left .text .title h2:hover {
+    text-decoration: underline;
+}
+  
+.blissweet-blog .left .text .description {
+    font-size: 18px;
+    margin-top: 20px;
+    color: #000000;
+    letter-spacing: 1px;
+    text-align: justify;
+    text-transform: none ;
+    margin: 0 60px;
+    padding-bottom: 30px;
+}
+  
+.imgs {
+    position: relative;
+    max-width: 100%;
+    height: auto;
+    padding-bottom: 60%; 
+    overflow: hidden;
+    z-index: 1;
+}
+  
+.imgs img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    top: 0;
+    left: 0;
+}
+  
+  
+/* TAMPILAN RESPONSIVE */
 @media screen and (max-width: 1068px) {
     .blog-post_img {
         min-width: 30rem;
@@ -163,6 +249,29 @@
     }
 }
 
+@media only screen and (max-width: 600px) {
+    .blissweet-blog .left .img {
+        min-width: 38rem;
+        max-width: 38rem;
+        height: 33rem;
+    }
+
+    .blissweet-blog .left .text .title h2 {
+        font-size: 24px;
+        margin: 0 10px;
+    }
+    
+    .blissweet-blog .left .text .meta {
+        font-size: 16px;
+        margin: 0 10px;
+    }
+      
+    .blissweet-blog .left .text .description {
+        font-size: 18px;
+        margin: 0 10px;
+    }
+}
+
 @media screen and (max-width: 450px) {
     .blog-post {
         margin-top: 20px;
@@ -188,6 +297,27 @@
 
     .blog-post_title {
         font-size: 25px;
+    }
+
+    .blissweet-blog .left .img {
+        min-width: 38rem;
+        max-width: 38rem;
+        height: 33rem;
+    }
+
+    .blissweet-blog .left .text .title h2 {
+        font-size: 24px;
+        margin: 0 10px;
+    }
+    
+    .blissweet-blog .left .text .meta {
+        font-size: 16px;
+        margin: 0 10px;
+    }
+      
+    .blissweet-blog .left .text .description {
+        font-size: 18px;
+        margin: 0 10px;
     }
 }
 
@@ -218,16 +348,57 @@
         font-size: 25px;
     }
 
+    .blissweet-blog .left .img {
+        min-width: 38rem;
+        max-width: 38rem;
+        height: 33rem;
+    }
+
+    .blissweet-blog .left .text .title h2 {
+        font-size: 24px;
+        margin: 0 10px;
+    }
+    
+    .blissweet-blog .left .text .meta {
+        font-size: 16px;
+        margin: 0 10px;
+    }
+      
+    .blissweet-blog .left .text .description {
+        font-size: 18px;
+        margin: 0 10px;
+    }
+
 }
 
 @media screen and (max-width: 360px) {
     .blog-post_img {
-    min-width: 38rem;
-    max-width: 38rem;
-    height: 33rem;
-    transform: translate(0, -1rem);
+        min-width: 38rem;
+        max-width: 38rem;
+        height: 33rem;
+        transform: translate(0, -1rem);
+    }  
+
+    .blissweet-blog .left .img {
+        min-width: 38rem;
+        max-width: 38rem;
+        height: 33rem;
     }
 
+    .blissweet-blog .left .text .title h2 {
+        font-size: 24px;
+        margin: 0 30px;
+    }
     
+    .blissweet-blog .left .text .meta {
+        font-size: 16px;
+        margin: 0 30px;
+    }
+      
+    .blissweet-blog .left .text .description {
+        font-size: 18px;
+        margin: 0 30px;
+    }
 }
+
         
